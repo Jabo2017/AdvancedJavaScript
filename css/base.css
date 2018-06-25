@@ -1,0 +1,22 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+:root,body{
+	height: 100%;
+}
+
+.tips {
+	padding: 3px 10px;
+	font-size: 18px;
+	color: #000;
+	background-color: #f29c9c;
+    
+}
+
+.box{
+	margin: 10px 0;
+}
+
