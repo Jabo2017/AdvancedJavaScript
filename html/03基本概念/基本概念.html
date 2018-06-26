@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+
+<body>
+    <div class="box">
+        <span class="tips">es5简单数据类型：</span>Undefined、Null、Boolean、Number、String
+    </div>
+
+    <div class="box">
+        <span class="tips">复杂数据类型：</span>Object
+    </div>
+
+    <div class="box">
+        <span class="tips">typeof：</span>var car = null; typeof(car) //返回object
+    </div>
+
+    <div class="box">
+        <span class="tips">Number():</span>数值转换
+    </div>
+
+    <div class="box">
+        <span class="tips">parseInt():</span>转为整数
+        <div>
+            <span class="note">备注：</span> Math.floor():向下取整; Math.round():四舍五入; Math.ceil();向上取整
+        </div>
+    </div>
+
+    <div class="box">
+        <span class="tips">String():</span>字符转换
+    </div>
+
+    <div class="box">
+        <span class="tips">一元加和减操作符:</span>隐形转换
+    </div>
+
+    <div class="box">
+        <span class="tips">for-in:</span>枚举对象属性
+    </div>
+
+    <div class="box">
+        <span class="tips">label,break,continue</span>
+    </div>
+
+	<div class="box">
+        <span class="tips">函数：</span>ECMAScript中的参数在内部是用一个数组来表示的
+    </div>
+
+    <script type="text/javascript">
+    //null 返回 object
+    var car = null;
+    console.log(typeof(car));
+
+    //数值范围
+    console.log('最小值：' + Number.MIN_VALUE);
+    console.log('最大值：' + Number.MAX_VALUE);
+
+    //数值转换
+    console.log(Number("Hi")) //NaN
+    console.log(Number("001")) //1
+    console.log(Number(true)) //1
+
+    //转为整数
+    console.log(parseInt("")) //NaN
+    console.log(parseInt(12.2)) //12
+    console.log(parseInt(16.9)) //16
+
+    //转为字符串: null ,undefined 没有toString()
+    var num = 60;
+    console.log(num.toString())
+    console.log(String(null))
+
+    //一元加和减操作符
+    var s1 = "01";
+    console.log(s1 = +s1)
+    console.log(s1 = -s1)
+
+    //for-in 
+    for (var propName in window) {
+       // console.log(propName)
+    }
+
+    //label,continue,break
+    var num = 0;
+    outm: //label
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                if (i == 5 && j == 5) {
+                    continue outm;
+                }
+                //console.log(i, "--", j)
+                num++;
+            }
+        }
+    console.log(num) // 95
+
+    num = 0;
+    outm:
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                if (i == 5 && j == 5) {
+                    break outm;
+                }
+                //console.log(i, "--", j)
+                num++;
+            }
+        }
+    console.log(num)
+
+
+
+    //函数
+    function say(){
+    	console.log("Hi " + arguments[0] +","+ arguments[1])
+    }
+
+    say('Jabo',"Good")
+    </script>
+</body>
+
+</html>

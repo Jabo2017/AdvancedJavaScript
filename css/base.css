@@ -20,3 +20,9 @@
 	margin: 10px 0;
 }
 
+.note{
+	display: inline-block;
+	margin: 6px 0;
+	color: #fff;
+	background-color: #f00;
+}
