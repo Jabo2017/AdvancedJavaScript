@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量、作用域</title>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+<body>
+	
+	 <div class="box">
+        <span class="tips">引用类型(对象)：</span>可以添加属性和方法
+    </div>
+
+    <div class="box">
+        <span class="tips">复制变量值：</span> 基本类型的复制：创建一个新值； 引用类型(对象)复制：新的空间值是指针，指向同一个对象
+    </div>
+
+    <div class="box">
+        <span class="tips">检测类型：</span>typeof ：检测引用类型的值； instanceof： 什么类型的对象
+    </div>
+
+
+	<script type="text/javascript">
+		// 引用类型(对象)
+		var person = new Object();
+		person.name = "Jabo";
+
+		// 复制变量值
+		var num1 = 5;
+		var num2 = num1;
+		num2 = 6;
+		console.log(num1);
+
+		var obj1 = new Object();
+		var obj2 = obj1;
+		obj1.name = "Jabo";
+		console.log(obj2.name)
+
+
+		//类型检测
+		var s = "Jabo";
+		var a = ['1','2'];
+		console.log(typeof s);
+		console.log(typeof a);
+		console.log(a instanceof Array);
+
+
+
+	</script>
+</body>
+</html>
