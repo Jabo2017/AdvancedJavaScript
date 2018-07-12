@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>concat、slice</title>
+</head>
+<body>
+
+	<div class="box">
+        <span class="tips">concat：</span>合并数组:追加到后面
+    </div>
+
+    <div class="box">
+        <span class="tips">concat：</span>合并数组:追加到后面
+    </div>
+	
+
+	<script type="text/javascript">
+		//concat:没有合并重复项
+		var colors = ['red',"yellow"];
+		var colors2 = colors.concat("green",['blue','black']);
+		console.log(colors2);
+
+		var othercolors =['brown','yellow'];
+		console.log(colors.concat(othercolors))
+
+
+		//合并并去掉重复项
+		function concatArray(){
+			var newArr = Array.prototype.concat.apply([],arguments);
+			console.log(arguments)
+			//Array.from() : 将一个类数组对象或者可遍历对象转换成一个真正的数组
+			//new Set() : 集合中不会包含重复项
+			return Array.from(new Set(newArr));
+		}
+
+		a2 = concatArray([1],[1,2,3],[4,3,6],[2,5,7]);
+		console.log(a2)
+
+
+
+	</script>
+</body>
+</html>
