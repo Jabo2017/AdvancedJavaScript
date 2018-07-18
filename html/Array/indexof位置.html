@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>indexof</title>
+	 <link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+<body>
+	<div class="box">
+        <span class="tips">indexOf：</span>位置方法：两个参数，参数1：要查找的项，参数2【可选】：表示查找起点位置，没找到返回-1
+    </div>
+    <div class="box">
+        <span class="tips">lastIndexOf：</span>位置方法从数组的末尾开始向前：两个参数，参数1：要查找的项，参数2【可选】：表示查找起点位置，没找到返回-1
+    </div>
+
+	
+	<script type="text/javascript">
+			var colors = ['red','yellow','green','red','blue','white','black'];
+
+			console.log(colors.indexOf('green'))   // 2
+
+			console.log(colors.lastIndexOf("white"))  //5
+
+			console.log(colors.indexOf("red",2));  //3
+
+			console.log(colors.lastIndexOf("red",6)); //3
+	</script>
+</body>
+</html>
