@@ -11,7 +11,7 @@
     </div>
 
     <div class="box">
-        <span class="tips">concat：</span>合并数组:追加到后面
+        <span class="tips">slice：</span>创建一个新数组：接收一到两个参数 [起始位置，结束位置]
     </div>
 	
 
@@ -37,8 +37,22 @@
 		a2 = concatArray([1],[1,2,3],[4,3,6],[2,5,7]);
 		console.log(a2)
 
+		//slice : 删除
+		var colors2 = ['red','green','blue'];
+		var removed = colors2.splice(0,1);
 
+		console.log(colors2);  //['green','blue']
+		console.log(removed);  //['red']
 
+		//slice :从位置1开始插入两项
+		removed = colors2.splice(1,0,"yellow","orange");
+		console.log(colors2); //['green',"yellow","orange",'blue']
+		console.log(removed); //[]
+
+		//splice 插入两项，删除一项
+		removed = colors2.splice(1,1,"red","purple");
+		console.log(colors2);  //['green',"red","purple","orange",'blue']
+		console.log(removed);  //['yellow']
 	</script>
 </body>
 </html>
