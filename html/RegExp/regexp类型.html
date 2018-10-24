@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp 类型</title>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+<body>
+	<div class="box">
+		<span class="tips">字面量表达式：</span> var expression = / pattern / flag ;
+		<ul>
+			<li>g: 表示全局（global），既应用于所有字符串，而非发现第一个匹配项就停止</li>
+			<li>i: 表示不区分大小写
+			（case-insensitive）,确认匹配项时忽略字符串大小写</li>
+			<li>m: 表示多行(multiline),即在达到一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项</li>
+		</ul>
+	</div>
+
+	<div class="box"><span class="tips">
+		RegExp构造函数
+	</span></div>
+
+	<script type="text/javascript">
+		/*
+		*  匹配字符串中所欲"at"的实例
+		 */
+		var pattern1 = /at/g;
+
+		/*
+		* 匹配第一个 "bat" 或 “cat" 不区分大小写
+		 */
+		var pattern2 = /[bc]at/i
+
+		/*
+		* 匹配所有以"at"结尾的字符串组合，不区分大小写
+		 */
+		var pattern3 = /.at/gi
+
+
+		/*
+		* 匹配第一个“[bc]at”，不区分大小写
+		 */
+		var pattern4 = /\[bc\]at/i
+
+		//构造函数
+		var pattern5 = new RegExp("[bc]at","i")  //等价于pattern2
+	</script>
+</body>
+</html>

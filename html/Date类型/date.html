@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date 类型</title>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+<body>
+	<div class="box">
+		<span class="tips">ECMAScript中的Date 自1970年1月1日午夜（零时）开始经过毫秒来保存日期</span>
+	</div>
+
+	<div class="box">
+		<span class="tips">根据特定的日期和时间创建日期对象：</span>Date.parse() 和 Date.UTC()
+	</div>
+
+	<div class="box"><span class="tips">Date.now()</span>返回表示调用这个方法是的日期和时间的毫秒数，简化使用Date对象分析代码的工作</div>
+
+	<div class="box"><span class="tips"><a href="https://www.cnblogs.com/queende7/p/8668982.html" target="_blank/8">日期/时间组件方法</a></span></div>
+
+	<script type="text/javascript">
+		var now = new Date();
+		console.log(now)
+
+		/////////////////////////////////////////////////////
+		// Date.parse() 接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数 //
+		/////////////////////////////////////////////////////
+		
+		var someDate = new Date(Date.parse("May 25, 2018"));
+		console.log(someDate)
+
+		// 传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN。实际上，如果直接将表示日期的字符串传递给Date构造函数，后台会调用Date.parse()
+		// 等价
+		new Date("May 25, 2018")
+
+		/////////////////////////////////////////////////
+		//Date.UTC()的参数分别是年份、基于0的月份，年和月是必须，其他参数省略则默认为0 //
+		/////////////////////////////////////////////////
+		var y2k = new Date(Date.UTC(2000, 0));
+		var allFives = new Date(Date.UTC(2018, 9, 10, 18, 59, 59))
+		console.log(y2k, allFives)
+
+		// 当前时间的毫秒数
+		var start = Date.now();
+		console.log(start)
+
+	</script>
+</body>
+</html>

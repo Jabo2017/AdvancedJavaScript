@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp 实例</title>
+	<link rel="stylesheet" type="text/css" href="../../css/base.css">
+</head>
+<body>
+	<div class="box">
+		<span class="tips">exec()</span>
+		<p>接受一个参数，即要应用模式的字符串，然后返回包含第一个匹配项信息的数组；</p>
+		<p>或者在没有匹配项的情况下返回null</p>
+		<p>返回的数组虽然是Array的实例，但包含两个额外的属性：</p>
+		<p>index和input。其中index表示匹配项在字符串中的位置。而input表示正则表达式的字符串。</p>
+		<p>在数组中，第一项是与整个模式匹配的字符串，而其他是与模式中的捕获组匹配的字符串</p>
+		<p>如果模式中没有捕获组，则该数组只包含一项</p>
+		
+	</div>
+
+	<div class="box">
+		<span class="tips">exec() 全局标志( g )</span>
+		<p>每次也只会返回一个匹配项</p>
+		<p>在没设置全局标志的情况下，在同一个字符串上多次调用exec()将始终返回第一个匹配项的信息</p>
+		<p>而在设置全局标志的情况下，每次调用exec()则都会在字符串中继续查找新匹配项</p>
+	</div>
+
+	<div class="box">
+		<span class="tips">test()</span>
+		<p>接收一个参数</p>
+		<p>与该参数匹配返回true</p>
+	</div>
+
+	
+	<script type="text/javascript">
+		var text = "mom and dad and baby";
+		var pattern = /mom( and dad( and baby)?)?/gi;
+
+		var matches = pattern.exec(text);
+		console.log(matches.index);
+		console.log(matches.input);
+		console.log(matches[0]);
+		console.log(matches[1]);
+		console.log(matches[2]);
+
+
+		var text2 = "cat, bat, sat, fat";
+		var pattern2 = /.at/g;
+
+		var matches2 = true;
+
+		while(matches2){
+			matches2 = pattern2.exec(text2)
+			console.log(matches2)
+		}
+
+		var text3 = "000-00-0000";
+		var pattern3 = /\d{3}-\d{2}-\d{4}/;
+
+		if (pattern3.test(text3)) {
+			console.log("Hi")
+		}
+
+	</script>
+</body>
+</html>
